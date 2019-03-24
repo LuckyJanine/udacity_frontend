@@ -1,0 +1,484 @@
+/*this is the page margin*/
+body {
+    margin: 10px 60px 10px 60px;
+}
+
+
+/*this is the page grid dispaly*/
+/*for the full screen*/
+@media (min-width:1100px) and (max-width:2000px) {
+    .headerbar {
+        display: none;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+        grid-template-rows: 1fr 5fr 0.5fr auto auto;
+
+        grid-template-areas: 
+            ". header header header"
+            "sidebar content content content"
+            ". footer footer footer"
+            ". footer_cherry footer_maple footer_manarola"
+            ". cherry_footer maple_footer manarola_footer";
+        
+    }
+}
+
+/*this is the header with logo and authors*/
+header {
+    grid-area: header;
+
+    background: url("logo.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 9%;
+}
+
+header h1 {
+    text-align: right;
+    font-family: "Geneva";
+    color: grey;
+    font-size: 3.5em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+header h2 {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top:0;
+}
+
+header hr {
+    border: 1.5px solid rgb(112,128,144);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/*this is the sidebar with three color boxes*/
+
+.sidebar {
+    grid-area: sidebar;
+
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    margin: 0 auto 5px auto;
+
+    font-size: 20px;
+}
+
+.sidebar p {
+    font-size: 18px;
+    margin: 0 auto 20px auto;
+}
+
+.sidebar #colorA {
+    height: 90px;
+    width: 90px;
+    background-color: darkgoldenrod;
+    margin-bottom: 5%;
+}
+
+.sidebar #colorB {
+    height: 90px;
+    width: 90px;
+    background-color: #2d3c49;
+    margin-bottom: 5%;
+}
+
+.sidebar #colorC {
+    height: 90px;
+    width: 90px;
+    background-color: #7d97ad;
+    margin-bottom: 5%;
+}
+
+/*this is the content with the main image*/
+.content {
+    grid-area: content;
+
+    display: grid;
+    grid-template-rows: 9.5fr 0.5fr;
+    grid-template-areas: 
+        "content_img"
+        "content_text";
+}
+
+.content img {
+    grid-area: content_img;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.content p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: dimgrey;
+    word-wrap: break-word;
+}
+
+
+/*this is the footer with three images and a sub-title*/
+.footer {
+    grid-area: footer;
+}
+
+.footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    color:gray;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: left;
+}
+
+.footer_cherry {
+    grid-area: footer_cherry;
+}
+
+.footer_cherry img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.cherry_footer {
+    grid-area: cherry_footer;
+}
+
+.cherry_footer p {
+    text-align: center;
+    color: dimgray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+
+    margin: 8px;
+
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+}
+
+.footer_maple {
+    grid-area: footer_maple;
+}
+
+.footer_maple img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.maple_footer {
+    grid-area: maple_footer;
+}
+
+.maple_footer p {
+    text-align: center;
+    color: dimgray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+
+    margin: 8px;
+
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+}
+
+.footer_manarola {
+    grid-area: footer_manarola;
+}
+
+.footer_manarola img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.manarola_footer {
+    grid-area: manarola_footer;
+}
+
+.manarola_footer p {
+    text-align: center;
+    color: dimgray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+
+    margin: 8px;
+
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+}
+
+/*media queries*/
+/*for the medium sized screen*/
+@media (min-width:650px) and (max-width:1100px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-gap: 10px;
+        
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto 1fr 1fr 1fr;
+
+        grid-template-areas: 
+            "header header"
+            "headerbar headerbar"
+            "content content"
+            "footer footer"
+            "footer_cherry cherry_footer"
+            "footer_maple maple_footer"
+            "footer_manarola manarola_footer";
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+
+    .header h2 {
+        text-align: center;
+    }
+    
+    .headerbar {
+        grid-area: headerbar;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+
+    .headerbar #colorA_h {
+        width:100px;
+        height: 50px;
+        background-color: darkgoldenrod;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .headerbar #colorB_h {
+        width:100px;
+        height: 50px;
+        background-color: #2d3c49;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .headerbar #colorC_h {
+        width:100px;
+        height: 50px;
+        background-color: #7d97ad;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content {
+        grid-area: content;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content_img"
+            "content_text";
+    }
+    
+    .content img {
+        grid-area: content_img;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+    
+    .content p {
+        grid-area: content_text;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 18px;
+        color: dimgrey;
+    }
+
+    .footer {
+        grid-area: footer;
+        text-align: left;
+    }
+
+    .footer_cherry {
+        grid-area: footer_cherry;
+    }
+
+    .cherry_footer {
+        grid-area: cherry_footer;
+        margin: auto;
+    }
+
+    .footer_maple {
+        grid-area: footer_maple;
+    }
+
+    .maple_footer {
+        grid-area: maple_footer;
+        margin: auto;
+    }
+
+    .footer_manarola {
+        grid-area: footer_manarola;
+    }
+    
+    .manarola_footer {
+        grid-area: manarola_footer;
+        margin: auto;
+    }
+  
+}
+
+@media (max-width:650px) {
+
+    body {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    header {
+        background-image: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-gap: 15px;
+        
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "header"
+            "headerbar"
+            "content"
+            "content"
+            "footer"
+            "footer_cherry"
+            "cherry_footer"
+            "footer_maple"
+            "maple_footer"
+            "footer_manarola"
+            "manarola_footer";
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+
+    .header h2 {
+        text-align: center;
+    }
+
+    .headerbar {
+        grid-area: headerbar;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+
+    .headerbar #colorA_h {
+        width:100px;
+        height: 50px;
+        background-color: darkgoldenrod;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin: auto;
+    }
+
+    .headerbar #colorB_h {
+        width:100px;
+        height: 50px;
+        background-color: #2d3c49;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin: auto;
+    }
+
+    .headerbar #colorC_h {
+        width:100px;
+        height: 50px;
+        background-color: #7d97ad;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        text-align: center;
+        color: aliceblue;
+        margin: auto;
+    }
+
+    .content {
+        grid-area: content;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content_img"
+            "content_text";
+    }
+    
+    .content img {
+        grid-area: content_img;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+    
+    .content p {
+        grid-area: content_text;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 18px;
+        color: dimgrey;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    .footer p {
+        margin: auto;
+    }
+
+}
